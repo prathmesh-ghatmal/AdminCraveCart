@@ -6,4 +6,210 @@
     android:layout_height="match_parent"
     tools:context=".AddItemsActivity">
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:scrollbars="none"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:id="@+id/AddItemBackButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/arrow_left"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/latobold"
+                android:text="Add Items"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/AddItemName"
+                android:layout_width="0dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edittextshape"
+                android:elevation="5dp"
+                android:ems="10"
+                android:hint="Enter Food Name"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <EditText
+                android:id="@+id/AddItemPrice"
+                android:layout_width="0dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edittextshape"
+                android:elevation="5dp"
+                android:ems="10"
+                android:hint="Enter Food price"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/AddItemName"
+                app:layout_constraintStart_toStartOf="@+id/AddItemName"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemName" />
+
+            <TextView
+                android:id="@+id/AddItemImage"
+                android:layout_width="0dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edittextshape"
+                android:drawableRight="@drawable/pluse_round"
+                android:elevation="5dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Add Image"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/AddItemPrice"
+                app:layout_constraintStart_toStartOf="@+id/AddItemPrice"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemPrice" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/AddItemImage"
+                app:layout_constraintStart_toStartOf="@+id/AddItemImage"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemImage">
+
+                <ImageView
+                    android:id="@+id/SelectedImage"
+                    android:layout_width="175dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/addimage" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edittextshape"
+                android:elevation="5dp"
+                android:fontFamily="@font/latobold"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="Short Description"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/cardView3"
+                app:layout_constraintStart_toStartOf="@+id/cardView3"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+            <EditText
+                android:id="@+id/AddItemDescription"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/white"
+                android:elevation="3dp"
+                android:ems="10"
+                android:fontFamily="@font/latoregular"
+                android:inputType="textMultiLine"
+                android:paddingLeft="15dp"
+                android:paddingTop="4dp"
+
+
+                android:paddingBottom="4dp"
+                android:text="If the sentence is the essential soul to express oneself in their own way, then the paragraph is the virtual body of it. The Text Generator is"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView19"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edittextshape"
+                android:elevation="5dp"
+                android:fontFamily="@font/latobold"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="Ingredients"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/AddItemImage"
+                app:layout_constraintStart_toStartOf="@+id/AddItemImage"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemDescription" />
+
+            <EditText
+                android:id="@+id/AddItemIngredients"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/white"
+                android:elevation="3dp"
+                android:ems="10"
+                android:fontFamily="@font/latoregular"
+                android:inputType="textMultiLine"
+                android:paddingLeft="15dp"
+
+
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="If the sentence is the essential soul to express oneself in their own way, then the paragraph is the virtual body of it. The Text Generator is"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="157dp"
+                android:layout_height="57dp"
+                android:background="@drawable/voiletbutton"
+                android:fontFamily="@font/latobold"
+                android:text="Add Item"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemIngredients" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

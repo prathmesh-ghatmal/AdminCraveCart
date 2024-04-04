@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AdminCraveCart"
         tools:targetApi="31">
         <activity
+            android:name=".AllItemsActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddItemsActivity"
             android:exported="false" />
         <activity
