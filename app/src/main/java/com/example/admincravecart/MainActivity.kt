@@ -19,5 +19,9 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,AllItemsActivity::class.java)
             startActivity(intent)
         }
+        binding.OrderDispatch.setOnClickListener {
+            val intent=Intent(this,OutForDeliveryActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

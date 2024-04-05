@@ -321,7 +321,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView6"
+        android:id="@+id/OrderDispatch"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="32dp"
@@ -366,8 +366,8 @@
         android:outlineSpotShadowColor="@color/text"
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cardView6"
-        app:layout_constraintTop_toTopOf="@+id/cardView6">
+        app:layout_constraintStart_toEndOf="@+id/OrderDispatch"
+        app:layout_constraintTop_toTopOf="@+id/OrderDispatch">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
