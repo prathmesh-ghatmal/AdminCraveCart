@@ -60,7 +60,7 @@
                 app:srcCompat="@drawable/attantion" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/PendingOrdersButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -80,9 +80,9 @@
                 android:text="30"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/textView5"
-                app:layout_constraintStart_toStartOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintEnd_toEndOf="@+id/PendingOrdersButton"
+                app:layout_constraintStart_toStartOf="@+id/PendingOrdersButton"
+                app:layout_constraintTop_toBottomOf="@+id/PendingOrdersButton" />
 
             <ImageView
                 android:id="@+id/imageView5"

@@ -31,5 +31,9 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,AddNewUserActivity::class.java)
             startActivity(intent)
         }
+        binding.PendingOrdersButton.setOnClickListener {
+            val intent=Intent(this,PendingOrderActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
