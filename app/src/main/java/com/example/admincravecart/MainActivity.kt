@@ -27,5 +27,9 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
         }
+        binding.AddNewUserButton.setOnClickListener {
+            val intent=Intent(this,AddNewUserActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

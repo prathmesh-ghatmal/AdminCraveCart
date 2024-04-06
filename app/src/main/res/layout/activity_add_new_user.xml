@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".AddNewUserActivity">
+    <ImageButton
+        android:id="@+id/AddNewUserBackButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left"
+        app:tint="@color/black" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="276dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/seclogo" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/latobold"
+        android:gravity="center"
+        android:text="Add New Admin User"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/NewUserEmailAddress"
+        android:layout_width="327dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/mail"
+        android:drawablePadding="15dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/NewUserName" />
+
+    <EditText
+        android:id="@+id/NewUserName"
+        android:layout_width="327dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/usernew"
+        android:drawablePadding="15dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/NewUserPassword"
+        android:layout_width="327dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="15dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/NewUserEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/NewUserEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/NewUserEmailAddress" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/CreateNewUserButton"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+
+
+        android:background="@drawable/voiletbutton"
+        android:text="Create New User"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewUserPassword" />
+</androidx.constraintlayout.widget.ConstraintLayout>

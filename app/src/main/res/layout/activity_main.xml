@@ -282,6 +282,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/AddNewUserButton"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:outlineSpotShadowColor="@color/text"
@@ -289,6 +290,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/EditProfile"
         app:layout_constraintTop_toTopOf="@+id/EditProfile">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
