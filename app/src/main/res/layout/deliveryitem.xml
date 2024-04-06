@@ -32,12 +32,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Customer Name"
-                app:layout_constraintBottom_toTopOf="@+id/textView21"
+                app:layout_constraintBottom_toTopOf="@+id/EditButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/EditButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
@@ -57,10 +57,10 @@
                 android:text="Not Recived"
                 android:textColor="#ff3b3b"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView21"
+                app:layout_constraintEnd_toEndOf="@+id/EditButton"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView21"
-                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+                app:layout_constraintStart_toStartOf="@+id/EditButton"
+                app:layout_constraintTop_toBottomOf="@+id/EditButton" />
 
             <TextView
                 android:id="@+id/textView23"
