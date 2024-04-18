@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "834967740338",
+    "project_id": "cravecart-5f294",
+    "storage_bucket": "cravecart-5f294.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834967740338:android:b1341437af60aadb154eab",
+        "android_client_info": {
+          "package_name": "com.example.admincravecart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaLkufowoN9VSX0TOOLJHD8-5_NbybhMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
