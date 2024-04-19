@@ -110,10 +110,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun UpdateUi(user: FirebaseUser?) {
-        startActivity(Intent(this, MainActivity::class.java))
-    }
 
+// launcher for google signin
     private val launcher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
@@ -124,7 +122,7 @@ class LoginActivity : AppCompatActivity() {
                     auth.signInWithCredential(credential).addOnCompleteListener { authTask ->
                         if (authTask.isSuccessful) {
                             Toast.makeText(this, "Sucessfully logged in", Toast.LENGTH_LONG).show()
-                            UpdateUi(user = null)
+                            UpdateUi(authTask.result?.user)
                             finish()
                         } else {
                             Toast.makeText(this, "log in failed", Toast.LENGTH_LONG).show()
@@ -137,4 +135,16 @@ class LoginActivity : AppCompatActivity() {
 
             }
         }
+
+    override fun onStart() {
+        super.onStart()
+        val currentuser=auth.currentUser
+        if(currentuser!=null){
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
+    }
+    private fun UpdateUi(user: FirebaseUser?) {
+        startActivity(Intent(this, MainActivity::class.java))
+    }
 }

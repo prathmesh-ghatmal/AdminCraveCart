@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AddItemsActivity">
 
     <ScrollView
         android:layout_width="0dp"
-        android:scrollbars="none"
         android:layout_height="match_parent"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +37,7 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/latobold"
                 android:text="Add Items"
                 android:textColor="@color/black"
@@ -46,11 +47,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/AddItemName"
+                android:id="@+id/AddItemFoodName"
                 android:layout_width="0dp"
                 android:layout_height="47dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="9dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/edittextshape"
                 android:elevation="5dp"
@@ -64,10 +65,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <EditText
-                android:id="@+id/AddItemPrice"
+                android:id="@+id/AddItemFoodPrice"
                 android:layout_width="0dp"
                 android:layout_height="47dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="9dp"
                 android:background="@drawable/edittextshape"
                 android:elevation="5dp"
                 android:ems="10"
@@ -75,15 +76,15 @@
                 android:inputType="text"
                 android:paddingLeft="15dp"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/AddItemName"
-                app:layout_constraintStart_toStartOf="@+id/AddItemName"
-                app:layout_constraintTop_toBottomOf="@+id/AddItemName" />
+                app:layout_constraintEnd_toEndOf="@+id/AddItemFoodName"
+                app:layout_constraintStart_toStartOf="@+id/AddItemFoodName"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemFoodName" />
 
             <TextView
-                android:id="@+id/AddItemImage"
+                android:id="@+id/AddItemFoodImage"
                 android:layout_width="0dp"
                 android:layout_height="47dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="9dp"
                 android:background="@drawable/edittextshape"
                 android:drawableRight="@drawable/pluse_round"
                 android:elevation="5dp"
@@ -92,19 +93,19 @@
                 android:paddingRight="15dp"
                 android:text="Add Image"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/AddItemPrice"
-                app:layout_constraintStart_toStartOf="@+id/AddItemPrice"
-                app:layout_constraintTop_toBottomOf="@+id/AddItemPrice" />
+                app:layout_constraintEnd_toEndOf="@+id/AddItemFoodPrice"
+                app:layout_constraintStart_toStartOf="@+id/AddItemFoodPrice"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemFoodPrice" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="9dp"
                 app:cardCornerRadius="15dp"
-                app:layout_constraintEnd_toEndOf="@+id/AddItemImage"
-                app:layout_constraintStart_toStartOf="@+id/AddItemImage"
-                app:layout_constraintTop_toBottomOf="@+id/AddItemImage">
+                app:layout_constraintEnd_toEndOf="@+id/AddItemFoodImage"
+                app:layout_constraintStart_toStartOf="@+id/AddItemFoodImage"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemFoodImage">
 
                 <ImageView
                     android:id="@+id/SelectedImage"
@@ -119,9 +120,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="9dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/edittextshape"
+                android:background="@android:color/transparent"
                 android:elevation="5dp"
                 android:fontFamily="@font/latobold"
                 android:gravity="center_vertical"
@@ -134,21 +135,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
             <EditText
-                android:id="@+id/AddItemDescription"
+                android:id="@+id/AddItemFoodDescription"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:background="@color/white"
+                android:background="@drawable/edittextshape"
                 android:elevation="3dp"
                 android:ems="10"
                 android:fontFamily="@font/latoregular"
+                android:gravity="start"
+                android:hint="Add description"
                 android:inputType="textMultiLine"
-                android:paddingLeft="15dp"
-                android:paddingTop="4dp"
-
-
-                android:paddingBottom="4dp"
-                android:text="If the sentence is the essential soul to express oneself in their own way, then the paragraph is the virtual body of it. The Text Generator is"
+                android:minHeight="100dp"
+                android:paddingStart="15dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="8dp"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@+id/textView19"
                 app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -158,9 +160,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="9dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/edittextshape"
+                android:background="@android:color/transparent"
                 android:elevation="5dp"
                 android:fontFamily="@font/latobold"
                 android:gravity="center_vertical"
@@ -168,45 +170,48 @@
                 android:text="Ingredients"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/AddItemImage"
-                app:layout_constraintStart_toStartOf="@+id/AddItemImage"
-                app:layout_constraintTop_toBottomOf="@+id/AddItemDescription" />
+                app:layout_constraintEnd_toEndOf="@+id/AddItemFoodImage"
+                app:layout_constraintStart_toStartOf="@+id/AddItemFoodImage"
+                app:layout_constraintTop_toBottomOf="@+id/AddItemFoodDescription" />
 
             <EditText
-                android:id="@+id/AddItemIngredients"
+                android:id="@+id/AddItemFoodIngredients"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:background="@color/white"
+                android:background="@drawable/edittextshape"
                 android:elevation="3dp"
                 android:ems="10"
                 android:fontFamily="@font/latoregular"
+                android:gravity="start"
+                android:hint="Add Ingredients"
                 android:inputType="textMultiLine"
-                android:paddingLeft="15dp"
 
-
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:text="If the sentence is the essential soul to express oneself in their own way, then the paragraph is the virtual body of it. The Text Generator is"
+                android:minHeight="100dp"
+                android:paddingStart="15dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="8dp"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@+id/textView12"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/AddItemsButton"
                 android:layout_width="157dp"
                 android:layout_height="57dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/voiletbutton"
                 android:fontFamily="@font/latobold"
                 android:text="Add Item"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AddItemIngredients" />
+                app:layout_constraintTop_toBottomOf="@+id/AddItemFoodIngredients" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
