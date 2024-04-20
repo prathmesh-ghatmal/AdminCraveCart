@@ -4,12 +4,10 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.admincravecart.databinding.ActivityAddItemsBinding
 import com.example.admincravecart.model.AllMenu
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 
@@ -83,11 +81,11 @@ class AddItemsActivity : AppCompatActivity() {
                 imageRef.downloadUrl.addOnSuccessListener { downloadurl ->
                     //create new menu item
                     val newItem = AllMenu(
-                        FoodName = FoodName,
-                        FoodPrice = FoodPrice,
-                        FoodDescription = FoodDescription,
-                        FoodIngredients = FoodIngredients,
-                        FoodImage = downloadurl.toString()
+                        foodName = FoodName,
+                        foodPrice = FoodPrice,
+                        foodDescription = FoodDescription,
+                        foodIngredients = FoodIngredients,
+                        foodImage = downloadurl.toString()
 
                     )
                     menukey?.let { key ->

@@ -1,17 +1,23 @@
 package com.example.admincravecart.adapter
 
+import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.admincravecart.databinding.ItemMenuBinding
+import com.example.admincravecart.model.AllMenu
+import com.google.firebase.database.DatabaseReference
 
-class AllItemAdapter (
-    private val AddItemName: MutableList<String>,
-    private val AddItemPrice: MutableList<String>,
-    private val AddItemImage: MutableList<Int>
-) : RecyclerView.Adapter<AllItemAdapter.AddAllItemViewHolder>() {
+class AddItemAdapter(
+    private val context: Context,
+    private val menulist: ArrayList<AllMenu>,
+    databaseReference: DatabaseReference,
 
-    private val itemQuantities = IntArray(AddItemName.size) { 1 }
+    ) : RecyclerView.Adapter<AddItemAdapter.AddAllItemViewHolder>() {
+
+    private val itemQuantities = IntArray(menulist.size) { 1 }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddAllItemViewHolder {
         val binding = ItemMenuBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AddAllItemViewHolder(binding)
@@ -22,16 +28,22 @@ class AllItemAdapter (
         holder.bind(position)
     }
 
-    override fun getItemCount(): Int = AddItemName.size
+    override fun getItemCount(): Int = menulist.size
 
     inner class AddAllItemViewHolder(private val binding: ItemMenuBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.apply {
                 val quantity = itemQuantities[position]
-                MenuItemName.text = AddItemName[position]
-                MenuItemPrice.text = AddItemPrice[position]
-                MenuItemImage.setImageResource(AddItemImage[position])
+                val menuItem=menulist[position]
+                val uriString=menuItem.foodImage
+
+                val uri=Uri.parse(uriString)
+              //  if (uri==null){
+                   // Toast.makeText(context,"null",Toast.LENGTH_SHORT).show()}
+                MenuItemName.text = menuItem.foodName
+                MenuItemPrice.text = menuItem.foodPrice
+                Glide.with(context).load(uri).into(MenuItemImage)
                 foodquantity.text = quantity.toString()
 
                 minusbutton.setOnClickListener { decreasequantity(position) }
@@ -58,11 +70,11 @@ class AllItemAdapter (
             }
         }
         private fun deleteitem(position: Int){
-            AddItemName.removeAt(position)
-            AddItemImage.removeAt(position)
-            AddItemPrice.removeAt(position)
+            menulist.removeAt(position)
+            menulist.removeAt(position)
+            menulist.removeAt(position)
             notifyItemRemoved(position)
-            notifyItemRangeChanged(position,AddItemName.size)
+            notifyItemRangeChanged(position,menulist.size)
         }
     }
 }
