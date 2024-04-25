@@ -14,8 +14,7 @@ class AddItemAdapter(
     private val context: Context,
     private val menulist: ArrayList<AllMenu>,
     databaseReference: DatabaseReference,
-
-    ) : RecyclerView.Adapter<AddItemAdapter.AddAllItemViewHolder>() {
+private val onDeleteClickListner:(position:Int)->Unit  ) : RecyclerView.Adapter<AddItemAdapter.AddAllItemViewHolder>() {
 
     private val itemQuantities = IntArray(menulist.size) { 1 }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddAllItemViewHolder {
@@ -49,10 +48,8 @@ class AddItemAdapter(
                 minusbutton.setOnClickListener { decreasequantity(position) }
                 plusbutton.setOnClickListener { increasequantity(position) }
                 deletebutton.setOnClickListener {
-                    val itemPosition = adapterPosition
-                    if (itemPosition != RecyclerView.NO_POSITION) {
-                        deleteitem(itemPosition)
-                    }
+                    onDeleteClickListner(position)
+
                 }
 
             }

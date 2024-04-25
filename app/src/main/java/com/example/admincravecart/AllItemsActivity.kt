@@ -3,6 +3,7 @@ package com.example.admincravecart
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.admincravecart.adapter.AddItemAdapter
 import com.example.admincravecart.databinding.ActivityAllItemsBinding
@@ -58,11 +59,24 @@ class AllItemsActivity : AppCompatActivity() {
 
     }
     private fun setAdapter() {
-        val adapter=AddItemAdapter(this@AllItemsActivity,menuItems,databaseReference)
+        val adapter=AddItemAdapter(this@AllItemsActivity,menuItems,databaseReference){position -> deleteMenuItems(position) }
         binding.MenuRecyclerView.layoutManager= LinearLayoutManager(this)
         binding.MenuRecyclerView.adapter=adapter
     }
 
+    private fun deleteMenuItems(position: Int) {
+        val menuItemToDelete=menuItems[position]
+        val menuItemKey=menuItemToDelete.key
+        val foodMenuReference=database.reference.child("menu").child(menuItemKey!!)
+        foodMenuReference.removeValue().addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.MenuRecyclerView.adapter?.notifyItemRemoved(position)
+                Toast.makeText(this, "Item deletion sucessful", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "Item deletion failed", Toast.LENGTH_SHORT).show()}
+        }
+    }
 
 
 }

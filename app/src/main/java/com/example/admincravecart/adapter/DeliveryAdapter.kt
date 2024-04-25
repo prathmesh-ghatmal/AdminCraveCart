@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.admincravecart.databinding.DeliveryitemBinding
 
-class DeliveryAdapter(private val CustomerName:ArrayList<String>,private val MoneyStatus:ArrayList<String>):RecyclerView.Adapter<DeliveryAdapter.DeliveryViewholder>() {
+class DeliveryAdapter(private val CustomerName:MutableList<String>,private val MoneyStatus:MutableList<Boolean>):RecyclerView.Adapter<DeliveryAdapter.DeliveryViewholder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryViewholder {
@@ -25,8 +25,13 @@ class DeliveryAdapter(private val CustomerName:ArrayList<String>,private val Mon
         fun bind(position: Int) {
             binding.apply {
                 DeliveryCustomerName.text=CustomerName[position]
-                DeliveryPaymentStatus.text=MoneyStatus[position]
-                val colorMap= mapOf("Recived" to Color.GREEN,"NotRecived" to Color.RED,"Pending" to Color.GRAY)
+                if(MoneyStatus [position]== true){
+                    DeliveryPaymentStatus.text="Recived"
+                }else{
+                    DeliveryPaymentStatus.text="not recived"
+                }
+
+                val colorMap= mapOf(true to Color.GREEN,false to Color.RED,"Pending" to Color.GRAY)
                 DeliveryPaymentStatus.setTextColor(colorMap[MoneyStatus[position]]?:Color.BLACK)
                 DeliveryDtatus.backgroundTintList= ColorStateList.valueOf(colorMap[MoneyStatus[position]]?:Color.BLACK)
             }

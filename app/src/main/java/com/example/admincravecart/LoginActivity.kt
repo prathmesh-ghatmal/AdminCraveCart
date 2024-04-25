@@ -131,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             } else {
-                Toast.makeText(this, "log in failed", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "log in failed tada", Toast.LENGTH_LONG).show()
 
             }
         }
